@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haziqa Khan Khattak — Product Designer & Design Engineer</title>
+  <meta name="description" content="Portfolio of Haziqa Khan Khattak, a Software Engineering graduate and Product Designer crafting poetry in pixels and resilience in code.">
+  <meta name="keywords" content="Haziqa Khan Khattak, Product Designer, Design Engineer, Software Engineer, UI/UX Designer, Design Systems, Figma">
+  <meta property="og:title" content="Haziqa Khan Khattak — Product Designer & Design Engineer">
+  <meta property="og:description" content="Bridging the gap between poetic design aesthetics and bulletproof software engineering.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/haziqa-avatar.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Ambient Cursor Glow Following Mouse -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Background Ambient Aurora Blobs -->
+  <div class="ambient-decor" aria-hidden="true">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
+  <!-- Grain Overlay Texture -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       FLOATING DYNAMIC ISLAND NAVIGATION
+       ======================================================================== -->
+  <header class="nav-island-wrapper" role="banner">
+    <nav class="nav-island" aria-label="Main Navigation">
+      <a href="#" class="nav-brand magnetic-target">
+        <img src="assets/images/haziqa-avatar.svg" alt="HKK Monogram" class="brand-avatar">
+        <span class="brand-name">Haziqa <span class="serif-italic">Khattak</span></span>
+      </a>
+
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span>Open for Roles</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#lab" class="nav-link">Design Lab</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Sound FX Toggle -->
+        <button id="sound-toggle-btn" class="sound-toggle-btn" title="Toggle Sensory Sound FX" aria-label="Toggle Sound Effects">
+          🔇
+        </button>
+
+        <!-- Theme Toggle (Dusk Plum <-> Blush Velvet) -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          ☀️
+        </button>
+
+        <!-- Direct Contact Trigger -->
+        <button class="nav-contact-btn trigger-contact-drawer magnetic-target" aria-label="Get in touch">
+          <span>Let's Talk</span>
+          <span>✦</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill-badge">
+            <span class="sparkle-icon">✦</span>
+            <span>Software Engineering Graduate • Product Designer</span>
+          </div>
+
+          <h1 class="hero-title">
+            Designing interfaces that feel like <span class="serif-italic">poetry</span>,<br>
+            engineered to scale like <span class="serif-italic">clockwork</span>.
+          </h1>
+
+          <p class="hero-subtitle">
+            Hi, I’m <strong>Haziqa Khan Khattak</strong>. I combine the structural rigor of a software engineer with the emotional empathy of a product designer to craft sensory digital experiences, resilient design systems, and fluid micro-interactions.
+          </p>
+
+          <!-- Core Dual Superpowers -->
+          <div class="hero-credentials-row">
+            <div class="cred-item">
+              <span class="cred-icon">📐</span>
+              <div>
+                <div class="cred-title">B.S. Software Engineering</div>
+                <div class="cred-desc">Algorithmic logic, code architecture & performance</div>
+              </div>
+            </div>
+
+            <div class="cred-item">
+              <span class="cred-icon">✨</span>
+              <div>
+                <div class="cred-title">End-to-End Product Design</div>
+                <div class="cred-desc">User research, design tokens, high-craft UI/UX</div>
+              </div>
+            </div>
+
+            <div class="cred-item">
+              <span class="cred-icon">⚡</span>
+              <div>
+                <div class="cred-title">Design Engineering Bridge</div>
+                <div class="cred-desc">Zero-handoff friction between Figma & React</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="hero-cta-group">
+            <a href="#work" class="btn-primary magnetic-target">
+              <span>Explore Selected Work</span>
+              <span>↓</span>
+            </a>
+
+            <a href="#lab" class="btn-glass magnetic-target">
+              <span>Interactive Design Lab</span>
+              <span>🧪</span>
+            </a>
+
+            <button class="btn-copy-email trigger-copy-email magnetic-target" title="Click to copy email">
+              <span>haziqa.khattak.design@gmail.com</span>
+              <span>📋</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FEATURED CASE STUDIES
+         ======================================================================== -->
+    <section class="section-wrapper" id="work">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span>✦</span>
+            <span>Case Studies & Systems</span>
+          </div>
+          <h2 class="section-title">Crafted with Precision & Emotion</h2>
+          <p class="section-subtitle">
+            Explore deep dives into product design, multi-brand token systems, and engineering-driven prototypes.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-container" role="tablist">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Projects (4)</button>
+          <button class="filter-tab" data-filter="Product Design" role="tab" aria-selected="false">Product Design</button>
+          <button class="filter-tab" data-filter="Design Systems" role="tab" aria-selected="false">Design Systems</button>
+          <button class="filter-tab" data-filter="Engineering" role="tab" aria-selected="false">Design Engineering</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 1: Aura Health -->
+          <article class="project-card magnetic-target" data-category="Product Design" data-study-id="aura-health">
+            <div class="card-media">
+              <img src="assets/images/aura-health.svg" alt="Aura Health Mobile Interface Preview" loading="lazy">
+              <div class="card-media-overlay">
+                <span class="quick-view-badge">Click to Read Case Study ↗</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Mobile Product Design</span>
+                <span class="tag-pill">Health Biometrics</span>
+                <span class="tag-pill">Circadian Tokens</span>
+              </div>
+              <h3 class="card-title">Aura Health — Biometric Chronotype Intelligence</h3>
+              <p class="card-desc">
+                Translating clinical sleep and circadian telemetry into a tranquil, glanceable mobile experience with zero cognitive overload.
+              </p>
+              <div class="card-metrics-row">
+                <div class="metric-stat">
+                  <span class="metric-num">+42%</span>
+                  <span class="metric-label">30-Day Retention</span>
+                </div>
+                <div class="metric-stat">
+                  <span class="metric-num">94.8%</span>
+                  <span class="metric-label">Task Success</span>
+                </div>
+                <div class="card-footer-action">
+                  <span class="btn-card-view">View Case Study →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Komorebi -->
+          <article class="project-card magnetic-target" data-category="Product Design" data-study-id="komorebi">
+            <div class="card-media">
+              <img src="assets/images/komorebi.svg" alt="Komorebi Ambient Focus Interface" loading="lazy">
+              <div class="card-media-overlay">
+                <span class="quick-view-badge">Click to Read Case Study ↗</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Spatial UI</span>
+                <span class="tag-pill">Web Audio API</span>
+                <span class="tag-pill">Flow State UX</span>
+              </div>
+              <h3 class="card-title">Komorebi — Ambient Focus & Procedural Soundscapes</h3>
+              <p class="card-desc">
+                A minimalist spatial desktop canvas coupling generative binaural audio with fluid task rhythms to dissolve creative friction.
+              </p>
+              <div class="card-metrics-row">
+                <div class="metric-stat">
+                  <span class="metric-num">12,000+</span>
+                  <span class="metric-label">Active Beta Users</span>
+                </div>
+                <div class="metric-stat">
+                  <span class="metric-num">4.9/5</span>
+                  <span class="metric-label">UX Satisfaction</span>
+                </div>
+                <div class="card-footer-action">
+                  <span class="btn-card-view">View Case Study →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Scribe Studio -->
+          <article class="project-card magnetic-target" data-category="Engineering" data-study-id="scribe-studio">
+            <div class="card-media">
+              <img src="assets/images/scribe-studio.svg" alt="Scribe Studio Figma to Code Engine" loading="lazy">
+              <div class="card-media-overlay">
+                <span class="quick-view-badge">Click to Read Case Study ↗</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Figma Plugin API</span>
+                <span class="tag-pill">TypeScript AST</span>
+                <span class="tag-pill">React Tokens</span>
+              </div>
+              <h3 class="card-title">Scribe Studio — Figma-to-Code Token Synchronizer</h3>
+              <p class="card-desc">
+                Bidirectional synchronization tool bridging Figma component states and tokens directly into typed React and CSS components.
+              </p>
+              <div class="card-metrics-row">
+                <div class="metric-stat">
+                  <span class="metric-num">-65%</span>
+                  <span class="metric-label">Handoff Review Lag</span>
+                </div>
+                <div class="metric-stat">
+                  <span class="metric-num">0 ms</span>
+                  <span class="metric-label">Layout Shift</span>
+                </div>
+                <div class="card-footer-action">
+                  <span class="btn-card-view">View Case Study →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Prism Design System -->
+          <article class="project-card magnetic-target" data-category="Design Systems" data-study-id="prism-system">
+            <div class="card-media">
+              <img src="assets/images/prism-system.svg" alt="Prism Design System Component Specs" loading="lazy">
+              <div class="card-media-overlay">
+                <span class="quick-view-badge">Click to Read Case Study ↗</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag-pill">Design Systems</span>
+                <span class="tag-pill">WCAG AAA</span>
+                <span class="tag-pill">Storybook</span>
+              </div>
+              <h3 class="card-title">Prism Design System — Multi-Brand Architecture</h3>
+              <p class="card-desc">
+                48 accessible, token-driven UI primitives with strict contrast compliance, dynamic dusk/blush theme palettes, and complete Storybook docs.
+              </p>
+              <div class="card-metrics-row">
+                <div class="metric-stat">
+                  <span class="metric-num">48</span>
+                  <span class="metric-label">Atomic Components</span>
+                </div>
+                <div class="metric-stat">
+                  <span class="metric-num">100%</span>
+                  <span class="metric-label">WCAG AAA Rated</span>
+                </div>
+                <div class="card-footer-action">
+                  <span class="btn-card-view">View Case Study →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         INTERACTIVE DESIGN ENGINEER LAB
+         ======================================================================== -->
+    <section class="lab-section" id="lab">
+      <div class="container">
+        <div class="lab-box">
+          <div class="lab-header">
+            <div class="lab-meta">
+              <div class="section-label">
+                <span>🧪</span>
+                <span>The Design Engineer Sandbox</span>
+              </div>
+              <h3>Live Interactive UI & Token Generator</h3>
+              <p>
+                Experience how I bridge design tokens with code execution. Adjust real-time color harmonies, glassmorphism blur, and test tactile component states.
+              </p>
+            </div>
+
+            <!-- View Switcher: Canvas vs Code -->
+            <div class="lab-mode-switch">
+              <button class="mode-btn active" data-mode="canvas">Canvas View 🎨</button>
+              <button class="mode-btn" data-mode="code">React Code 💻</button>
+            </div>
+          </div>
+
+          <div class="lab-grid">
+            <!-- Controls Column -->
+            <div class="lab-controls-panel">
+              <!-- Hue Slider -->
+              <div class="control-group">
+                <div class="control-label-row">
+                  <span>Blush / Orchid Hue</span>
+                  <span class="control-val" id="lab-hue-val">325°</span>
+                </div>
+                <input type="range" class="custom-slider" id="lab-hue-slider" min="260" max="360" value="325" aria-label="Adjust Hue">
+              </div>
+
+              <!-- Saturation Slider -->
+              <div class="control-group">
+                <div class="control-label-row">
+                  <span>Vibrancy / Saturation</span>
+                  <span class="control-val" id="lab-sat-val">85%</span>
+                </div>
+                <input type="range" class="custom-slider" id="lab-sat-slider" min="40" max="100" value="85" aria-label="Adjust Saturation">
+              </div>
+
+              <!-- Corner Radius Slider -->
+              <div class="control-group">
+                <div class="control-label-row">
+                  <span>Border Curvature (Radius)</span>
+                  <span class="control-val" id="lab-radius-val">18px</span>
+                </div>
+                <input type="range" class="custom-slider" id="lab-radius-slider" min="6" max="32" value="18" aria-label="Adjust Border Radius">
+              </div>
+
+              <!-- Glass Blur Slider -->
+              <div class="control-group">
+                <div class="control-label-row">
+                  <span>Backdrop Glass Blur</span>
+                  <span class="control-val" id="lab-blur-val">20px</span>
+                </div>
+                <input type="range" class="custom-slider" id="lab-blur-slider" min="0" max="40" value="20" aria-label="Adjust Backdrop Blur">
+              </div>
+
+              <!-- Variant Selector Chips -->
+              <div class="control-group">
+                <label class="control-label-row">
+                  <span>Component Micro-States</span>
+                </label>
+                <div class="button-state-toggles">
+                  <button class="state-toggle-chip active" data-variant="primary">Primary Shimmer</button>
+                  <button class="state-toggle-chip" data-variant="glass">Frosted Glass</button>
+                  <button class="state-toggle-chip" data-variant="haptic">Haptic Pulse</button>
+                  <button class="state-toggle-chip" data-variant="loading">Loading State</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sandbox Canvas Column -->
+            <div class="lab-canvas-panel">
+              <!-- Live Interactive Sample Component -->
+              <div id="lab-canvas-viewport" style="width: 100%; display: flex; justify-content: center;">
+                <div class="interactive-sample-card" id="lab-sample-card">
+                  <div class="sample-card-header">
+                    <div class="sample-avatar-chip">
+                      <div class="sample-dot" id="lab-sample-dot"></div>
+                      <span class="mono-tag" style="color: var(--text-muted);">LIVE TOKEN INSTANCE</span>
+                    </div>
+                    <span style="font-size: 0.75rem; color: var(--accent-blush); font-family: var(--font-mono);">60 FPS</span>
+                  </div>
+
+                  <div>
+                    <h4 class="sample-title">Tactile Experience Layer</h4>
+                    <p class="sample-desc">
+                      Every token you slide instantly updates CSS custom properties and shadow mathematics in real time.
+                    </p>
+                  </div>
+
+                  <button class="interactive-preview-btn" id="lab-sample-btn">
+                    <span>Explore State</span>
+                    <span>✨</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Live Code Output Panel (Hidden by default, shown via toggle) -->
+              <div class="lab-code-output" id="lab-code-output">
+                <pre><code id="lab-code-block">// Generating tokens...</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         BENTO GRID: ABOUT, EDUCATION & METHODOLOGY
+         ======================================================================== -->
+    <section class="bento-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <span>✦</span>
+            <span>Background & Identity</span>
+          </div>
+          <h2 class="section-title">The Romantic Technologist</h2>
+          <p class="section-subtitle">
+            Where computer science fundamentals meet high-end sensory aesthetics.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Card 1: Dual Mindset (Span 2) -->
+          <div class="bento-card span-2">
+            <div class="bento-icon">⚡</div>
+            <h3 class="bento-title">The Software Engineer's Design Advantage</h3>
+            <p class="bento-desc">
+              Having a formal degree in Software Engineering gives me an unfair advantage as a Product Designer. I design interfaces knowing the state machines, rendering lifecycles, and database structures that power them. There are no "impossible handoffs"—only seamless, optimized systems ready to ship.
+            </p>
+            <div class="skill-pills-row">
+              <span class="skill-badge">Finite State Machines</span>
+              <span class="skill-badge">Component Token Math</span>
+              <span class="skill-badge">Render Performance</span>
+              <span class="skill-badge">WCAG 2.2 AAA</span>
+              <span class="skill-badge">Git & CI/CD Pipelines</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Academic Degree -->
+          <div class="bento-card">
+            <div class="bento-icon">🎓</div>
+            <h3 class="bento-title">Education</h3>
+            <p class="bento-desc">
+              <strong>B.S. in Software Engineering</strong><br>
+              Focus on Human-Computer Interaction, Distributed Systems, and Object-Oriented Architecture. Graduated with top marks and capstone in adaptive design systems.
+            </p>
+            <div class="mono-tag" style="color: var(--accent-blush); margin-top: auto;">
+              HONORS GRADUATE • HCI CAPSTONE
+            </div>
+          </div>
+
+          <!-- Card 3: Design Toolkit -->
+          <div class="bento-card">
+            <div class="bento-icon">🎨</div>
+            <h3 class="bento-title">Design Craft</h3>
+            <p class="bento-desc">
+              Obsessed with micro-typography, spatial layouts, variable fonts, and high-fidelity physics in prototyping tools.
+            </p>
+            <div class="skill-pills-row">
+              <span class="skill-badge">Figma Variables</span>
+              <span class="skill-badge">ProtoPie</span>
+              <span class="skill-badge">Principle</span>
+              <span class="skill-badge">Spline 3D</span>
+              <span class="skill-badge">Framer</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Engineering Stack -->
+          <div class="bento-card">
+            <div class="bento-icon">💻</div>
+            <h3 class="bento-title">Code Craft</h3>
+            <p class="bento-desc">
+              Comfortable writing production frontend code that respects accessibility, design tokens, and smooth 60fps animations.
+            </p>
+            <div class="skill-pills-row">
+              <span class="skill-badge">TypeScript</span>
+              <span class="skill-badge">React / Next.js</span>
+              <span class="skill-badge">CSS Architecture</span>
+              <span class="skill-badge">Tailwind / Vanilla</span>
+              <span class="skill-badge">Web Audio API</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Now Playing Widget -->
+          <div class="bento-card">
+            <div class="bento-icon">🎵</div>
+            <h3 class="bento-title">Deep Work Sanctuary</h3>
+            <p class="bento-desc">
+              Designing best happens when synchronized with ambient frequencies and meditative rhythms.
+            </p>
+            <div class="focus-audio-widget" style="margin-top: auto;">
+              <div class="sound-bars-indicator">
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+                <div class="sound-bar"></div>
+              </div>
+              <div>
+                <div style="font-size: 0.85rem; font-weight: 700;">Rain on Dusk Bamboo</div>
+                <div style="font-size: 0.75rem; color: var(--accent-blush);">432Hz Binaural Study Rhythm</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT SECTION
+         ======================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-hero">
+          <div class="section-label">
+            <span>✦</span>
+            <span>Let's Collaborate</span>
+          </div>
+          <h2>
+            Have a visionary product in mind?<br>
+            Let’s craft something <span class="serif-italic">extraordinary</span> together.
+          </h2>
+          <p>
+            Available for full-time Product Design & Design Engineering roles, design system consultations, and selective high-impact freelance ventures.
+          </p>
+
+          <div class="contact-buttons-row">
+            <button class="btn-primary trigger-contact-drawer magnetic-target">
+              <span>Open Inquiry Drawer</span>
+              <span>✉️</span>
+            </button>
+
+            <button class="btn-copy-email trigger-copy-email magnetic-target">
+              <span>Copy Direct Email</span>
+              <span>📋</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copy">
+          © 2026 <strong>Haziqa Khan Khattak</strong> — Designed with blush & code.
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link-item">LinkedIn ↗</a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-link-item">GitHub ↗</a>
+          <a href="https://dribbble.com" target="_blank" rel="noopener" class="social-link-item">Dribbble ↗</a>
+          <a href="https://figma.com" target="_blank" rel="noopener" class="social-link-item">Figma Community ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL: FULL CASE STUDY READER
+       ======================================================================== -->
+  <div class="modal-overlay" id="case-study-modal" role="dialog" aria-modal="true" aria-label="Case Study Reader">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Case Study">✕</button>
+      <div class="modal-content-body" id="modal-content-body">
+        <!-- Injected dynamically via js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       INTERACTIVE CONTACT DRAWER
+       ======================================================================== -->
+  <div class="drawer-overlay" id="contact-drawer-overlay">
+    <div class="contact-drawer" role="dialog" aria-modal="true" aria-label="Contact Form">
+      <div class="drawer-header">
+        <div>
+          <span class="mono-tag" style="color: var(--accent-blush);">LET'S CONNECT</span>
+          <h3>Send a Message</h3>
+        </div>
+        <button class="modal-close-btn" id="drawer-close-btn" aria-label="Close Drawer">✕</button>
+      </div>
+
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+        Whether you have an opening for a Product Designer, need design system architecture, or just want to discuss HCI, I’d love to hear from you.
+      </p>
+
+      <form id="drawer-contact-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div class="contact-form-group">
+          <label>What are you interested in?</label>
+          <div class="project-type-chips">
+            <span class="type-chip selected">Full-time Role</span>
+            <span class="type-chip">Design Systems</span>
+            <span class="type-chip">Contract UI/UX</span>
+            <span class="type-chip">Coffee Chat</span>
+          </div>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" class="form-input" placeholder="e.g. Elena Rostova" required>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="contact-message">Message or Role Details</label>
+          <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your product, team, or opportunity..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; margin-top: 0.5rem;">
+          <span>Send Message</span>
+          <span>⚡</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION
+       ======================================================================== -->
+  <div id="toast-notification" role="status" aria-live="polite">
+    <span style="font-size: 1.2rem;">✨</span>
+    <span class="toast-text">Notification</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/case-studies-data.js"></script>
+  <script src="js/interactive-lab.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

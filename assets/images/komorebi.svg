@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="k-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140920"/>
+      <stop offset="50%" stop-color="#241033"/>
+      <stop offset="100%" stop-color="#0e0618"/>
+    </linearGradient>
+    <linearGradient id="k-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="k-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(38,19,56,0.7)"/>
+      <stop offset="100%" stop-color="rgba(21,11,36,0.9)"/>
+    </linearGradient>
+    <filter id="k-shadow">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#a855f7" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#k-bg)"/>
+  <circle cx="680" cy="120" r="180" fill="#f472b6" opacity="0.14" filter="blur(70px)"/>
+  <circle cx="120" cy="380" r="160" fill="#c084fc" opacity="0.15" filter="blur(70px)"/>
+
+  <!-- Desktop Browser / App Window Shell -->
+  <g transform="translate(60, 45)" filter="url(#k-shadow)">
+    <!-- Window Border & Body -->
+    <rect width="680" height="410" rx="20" fill="url(#k-card-bg)" stroke="rgba(244,114,182,0.3)" stroke-width="1.5"/>
+    
+    <!-- Title Bar -->
+    <rect width="680" height="44" rx="20" fill="rgba(25,12,41,0.95)"/>
+    <path d="M 0 24 Q 0 44 20 44 L 660 44 Q 680 44 680 24 L 680 44 L 0 44 Z" fill="rgba(25,12,41,0.95)"/>
+    <!-- Window Controls -->
+    <circle cx="32" cy="22" r="6" fill="#f43f5e" opacity="0.8"/>
+    <circle cx="52" cy="22" r="6" fill="#fbbf24" opacity="0.8"/>
+    <circle cx="72" cy="22" r="6" fill="#34d399" opacity="0.8"/>
+    <text x="340" y="27" text-anchor="middle" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500">Komorebi — Ambient Focus Canvas</text>
+
+    <!-- Sidebar -->
+    <g transform="translate(0, 44)">
+      <rect width="180" height="366" fill="rgba(15,7,26,0.6)" stroke="rgba(244,114,182,0.15)" stroke-width="1"/>
+      
+      <!-- User Profile / Space -->
+      <circle cx="34" cy="36" r="14" fill="url(#k-accent)"/>
+      <text x="56" y="35" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">Deep Work</text>
+      <text x="56" y="48" fill="#a8a29e" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">2.5 hrs active</text>
+
+      <!-- Nav Items -->
+      <rect x="14" y="80" width="152" height="34" rx="8" fill="rgba(244,114,182,0.18)" stroke="rgba(244,114,182,0.4)" stroke-width="1"/>
+      <text x="40" y="102" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500">Spatial Soundscapes</text>
+      
+      <text x="40" y="146" fill="#c084fc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Flow Rhythm</text>
+      <text x="40" y="186" fill="#c084fc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Daily Rituals</text>
+      <text x="40" y="226" fill="#c084fc" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Micro Notes</text>
+
+      <!-- Mini Sound Pill -->
+      <g transform="translate(16, 290)">
+        <rect width="148" height="54" rx="12" fill="rgba(33,16,53,0.9)" stroke="rgba(192,132,252,0.3)" stroke-width="1"/>
+        <text x="14" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600">Rain on Bamboo</text>
+        <text x="14" y="40" fill="#f472b6" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">432Hz Binaural</text>
+        <circle cx="125" cy="27" r="10" fill="url(#k-accent)"/>
+        <polygon points="123,23 129,27 123,31" fill="#ffffff"/>
+      </g>
+    </g>
+
+    <!-- Main Content Area -->
+    <g transform="translate(195, 58)">
+      <!-- Top Status Banner -->
+      <text x="15" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700">Evening Focus Session</text>
+      <text x="15" y="44" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Soundscape synchronized with heart rate pacing</text>
+
+      <!-- Waveform Visualizer -->
+      <g transform="translate(15, 65)">
+        <rect width="445" height="110" rx="16" fill="rgba(16,8,29,0.7)" stroke="rgba(244,114,182,0.2)" stroke-width="1"/>
+        <!-- Dynamic Audio Waves -->
+        <path d="M 20 55 Q 60 15, 100 55 T 180 55 T 260 55 T 340 55 T 425 55" fill="none" stroke="rgba(244,114,182,0.3)" stroke-width="2"/>
+        <path d="M 20 55 Q 50 85, 90 55 T 170 55 T 250 55 T 330 55 T 425 55" fill="none" stroke="rgba(192,132,252,0.35)" stroke-width="2"/>
+        <path d="M 20 55 Q 80 -10, 140 55 T 260 55 T 380 55 T 425 55" fill="none" stroke="url(#k-accent)" stroke-width="3" stroke-linecap="round"/>
+        <text x="25" y="96" fill="#f472b6" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600">● LIVE 528Hz WAVE MATRIX</text>
+        <text x="350" y="96" fill="#e9d5ff" font-family="'JetBrains Mono', monospace" font-size="11">01:42:19</text>
+      </g>
+
+      <!-- Task Blocks in Dual Grid -->
+      <g transform="translate(15, 195)">
+        <!-- Card 1 -->
+        <rect width="215" height="140" rx="14" fill="rgba(26,13,44,0.7)" stroke="rgba(244,114,182,0.25)" stroke-width="1"/>
+        <text x="16" y="28" fill="#f472b6" font-family="'JetBrains Mono', monospace" font-size="10">FOCUS BLOCK 01</text>
+        <text x="16" y="52" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600">Design System Audit</text>
+        <text x="16" y="72" fill="#a8a29e" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Token consistency in Figma</text>
+        <!-- Progress Bar -->
+        <rect x="16" y="98" width="183" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="16" y="98" width="145" height="6" rx="3" fill="url(#k-accent)"/>
+        <text x="16" y="122" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">80% completed</text>
+
+        <!-- Card 2 -->
+        <g transform="translate(230, 0)">
+          <rect width="215" height="140" rx="14" fill="rgba(26,13,44,0.7)" stroke="rgba(192,132,252,0.25)" stroke-width="1"/>
+          <text x="16" y="28" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="10">FOCUS BLOCK 02</text>
+          <text x="16" y="52" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600">Spatial UI Prototyping</text>
+          <text x="16" y="72" fill="#a8a29e" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Principle micro-interactions</text>
+          <rect x="16" y="98" width="183" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="16" y="98" width="85" height="6" rx="3" fill="url(#k-accent)"/>
+          <text x="16" y="122" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">45% completed</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
