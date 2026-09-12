@@ -2048,3 +2048,177 @@ button {
   z-index: 10;
 }
 
+/* ==========================================================================
+   SCROLL-LINKED IMAGE SEQUENCE COMPONENT (APPLE-STYLE)
+   ========================================================================== */
+
+/* 
+   SPEED ADJUSTMENT:
+   The height of .scroll-sequence-section sets the total scroll duration.
+   - Slower animation: Increase height to 500vh or 600vh
+   - Faster animation: Decrease height to 250vh or 300vh
+*/
+.scroll-sequence-section {
+  position: relative;
+  height: 400vh;
+  background-color: var(--bg-primary);
+  width: 100%;
+}
+
+.scroll-sequence-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+}
+
+#scroll-sequence-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Loading Overlay */
+.sequence-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  z-index: 20;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+}
+
+.sequence-loading-overlay.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.sequence-loader-spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(244, 114, 182, 0.15);
+  border-top-color: var(--accent-blush);
+  animation: sequenceSpin 0.9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes sequenceSpin {
+  to { transform: rotate(360deg); }
+}
+
+.sequence-loader-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sequence-loader-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.sequence-loader-pct {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-blush);
+}
+
+.sequence-progress-bar {
+  width: 220px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.sequence-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-blush);
+  transition: width 0.15s ease-out;
+}
+
+/* Narrative Overlay */
+.sequence-narrative {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.sequence-phrase {
+  position: absolute;
+  text-align: center;
+  max-width: 700px;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.sequence-phrase.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sequence-phrase h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 0.6rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll Hint */
+.sequence-scroll-hint {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(13, 8, 20, 0.65);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 6;
+  transition: opacity 0.3s ease;
+  animation: floatHint 2.2s infinite ease-in-out;
+}
+
+@keyframes floatHint {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+

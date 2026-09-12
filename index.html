@@ -223,6 +223,45 @@
     </section>
 
     <!-- ========================================================================
+         SCROLL-LINKED IMAGE SEQUENCE ANIMATION (APPLE-STYLE)
+         ======================================================================== -->
+    <section id="scroll-sequence" class="scroll-sequence-section" aria-label="Interactive Product Animation">
+      <div class="scroll-sequence-sticky">
+        <canvas id="scroll-sequence-canvas"></canvas>
+
+        <!-- Loading State Overlay -->
+        <div id="sequence-loading" class="sequence-loading-overlay">
+          <div class="sequence-loader-spinner"></div>
+          <div class="sequence-loader-info">
+            <span class="sequence-loader-title">Loading Interactive Experience</span>
+            <span id="sequence-loader-progress" class="sequence-loader-pct">0%</span>
+          </div>
+          <div class="sequence-progress-bar">
+            <div id="sequence-progress-fill" class="sequence-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Ambient Narrative Overlays -->
+        <div class="sequence-narrative">
+          <div class="sequence-phrase" id="sequence-phrase-1">
+            <span class="mono-tag" style="color: var(--accent-blush);">DESIGN ENGINEERING</span>
+            <h2>Precision in Every Frame</h2>
+          </div>
+          <div class="sequence-phrase" id="sequence-phrase-2">
+            <span class="mono-tag" style="color: var(--accent-purple);">FLUID MOTION</span>
+            <h2>Sculpted by Code and Empathy</h2>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator Hint -->
+        <div class="sequence-scroll-hint" id="sequence-scroll-hint">
+          <span>Scroll to scrub animation</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
          FEATURED CASE STUDIES
          ======================================================================== -->
     <section class="section-wrapper" id="work">
@@ -948,6 +987,7 @@
   <script src="js/interactive-lab.js"></script>
   <script src="js/tilt-3d.js"></script>
   <script src="js/three-scene.js"></script>
+  <script src="js/scroll-sequence.js"></script>
   <script src="js/app.js"></script>
 
   <!-- Inline Tab Switcher for Hero Media (Portrait <-> 3D WebGL) -->
