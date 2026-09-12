@@ -1,5 +1,5 @@
 /**
- * HAZIQA KHAN KHATTAK — INTERACTIVE DESIGN ENGINEER LAB
+ * HAZIQA KHAN: INTERACTIVE DESIGN ENGINEER LAB
  * Live token generator, component state tester, and code vs canvas inspector.
  */
 
@@ -128,7 +128,7 @@ export const InteractivePill = () => (
     });
   }
 
-  // Variant Chips
+  // Variant Chips without emojis
   stateChips.forEach(chip => {
     chip.addEventListener('click', () => {
       stateChips.forEach(c => c.classList.remove('active'));
@@ -140,20 +140,20 @@ export const InteractivePill = () => (
           sampleBtn.style.background = `hsl(${currentHue}, ${currentSat}%, 68%)`;
           sampleBtn.style.color = '#ffffff';
           sampleBtn.style.border = 'none';
-          sampleBtn.innerHTML = `Explore State <span>✨</span>`;
+          sampleBtn.innerHTML = `Explore State`;
         } else if (activeVariant === 'glass') {
           sampleBtn.style.background = 'rgba(255, 255, 255, 0.08)';
           sampleBtn.style.color = '#fbcfe8';
           sampleBtn.style.border = `1px solid hsla(${currentHue}, ${currentSat}%, 70%, 0.4)`;
-          sampleBtn.innerHTML = `Frosted Glass <span>🔮</span>`;
+          sampleBtn.innerHTML = `Frosted Glass`;
         } else if (activeVariant === 'haptic') {
           sampleBtn.style.background = `hsla(${currentHue}, ${currentSat}%, 60%, 0.2)`;
           sampleBtn.style.color = '#ffffff';
           sampleBtn.style.border = `1px solid hsla(${currentHue}, ${currentSat}%, 60%, 0.6)`;
-          sampleBtn.innerHTML = `Haptic Pulse <span>⚡</span>`;
+          sampleBtn.innerHTML = `Haptic Pulse`;
         } else if (activeVariant === 'loading') {
           sampleBtn.style.background = `hsl(${currentHue}, ${currentSat}%, 68%)`;
-          sampleBtn.innerHTML = `<span style="display:inline-block;animation:spin 1s linear infinite;">⏳</span> Processing...`;
+          sampleBtn.innerHTML = `<span class="spinner-icon" style="display:inline-block;width:12px;height:12px;border:2px solid rgba(255,255,255,0.3);border-top-color:#ffffff;border-radius:50%;animation:spin 0.8s linear infinite;margin-right:6px;"></span> Processing`;
         }
       }
 
@@ -186,7 +186,6 @@ export const InteractivePill = () => (
         sampleBtn.style.transform = 'scale(1)';
       }, 150);
 
-      // Play soft sound if enabled
       if (window.playMicroSound) {
         window.playMicroSound(660);
       }

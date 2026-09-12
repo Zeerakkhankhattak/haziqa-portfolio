@@ -1,10 +1,17 @@
 /**
- * HAZIQA KHAN KHATTAK — PORTFOLIO MAIN CONTROLLER
+ * HAZIQA KHAN: PORTFOLIO MAIN CONTROLLER
  * Ambient cursor glow, theme toggling, project filtering, modal viewer, contact drawer, and audio feedback.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. Audio Synthesizer (Opt-in Micro-haptics) ---
+  // SVG Icons for Toggle Buttons (No emojis)
+  const soundOnSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
+  const soundMutedSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`;
+
+  const sunSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+  const moonSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+  // 1. Audio Synthesizer (Opt-in Sensory Haptics)
   let soundEnabled = false;
   const soundToggleBtn = document.getElementById('sound-toggle-btn');
   let audioCtx = null;
@@ -37,21 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
       osc.start();
       osc.stop(audioCtx.currentTime + duration);
     } catch (e) {
-      // Ignore audio failure if restricted by browser
+      // Ignore audio restriction if muted by browser policy
     }
   };
 
   if (soundToggleBtn) {
+    soundToggleBtn.innerHTML = soundMutedSvg;
     soundToggleBtn.addEventListener('click', () => {
       soundEnabled = !soundEnabled;
-      soundToggleBtn.innerHTML = soundEnabled ? '🔊' : '🔇';
-      soundToggleBtn.setAttribute('title', soundEnabled ? 'Sound FX On' : 'Sound FX Muted');
+      soundToggleBtn.innerHTML = soundEnabled ? soundOnSvg : soundMutedSvg;
+      soundToggleBtn.setAttribute('title', soundEnabled ? 'Sound Effects Enabled' : 'Sound Effects Muted');
       if (soundEnabled) window.playMicroSound(880, 0.1);
-      showToast(soundEnabled ? 'Sensory sound feedback enabled ✦' : 'Sound feedback muted');
+      showToast(soundEnabled ? 'Sensory sound feedback enabled' : 'Sound feedback muted');
     });
   }
 
-  // --- 2. Ambient Cursor Glow ---
+  // 2. Ambient Cursor Glow
   const cursorGlow = document.getElementById('cursor-glow');
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
@@ -73,17 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   renderCursorGlow();
 
-  // --- 3. Theme Toggle (Dusk Plum ↔ Blush Velvet) ---
+  // 3. Theme Toggle: Dusk Plum and Blush Velvet
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const savedTheme = localStorage.getItem('hkk-theme') || 'dark';
 
   function applyTheme(theme) {
     if (theme === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
-      if (themeToggleBtn) themeToggleBtn.innerHTML = '🌙';
+      if (themeToggleBtn) themeToggleBtn.innerHTML = moonSvg;
     } else {
       document.documentElement.removeAttribute('data-theme');
-      if (themeToggleBtn) themeToggleBtn.innerHTML = '☀️';
+      if (themeToggleBtn) themeToggleBtn.innerHTML = sunSvg;
     }
     localStorage.setItem('hkk-theme', theme);
   }
@@ -99,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 4. Category Filter Tabs ---
+  // 4. Category Filter Tabs
   const filterTabs = document.querySelectorAll('.filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -130,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 5. Modal Case Study Reader ---
+  // 5. Modal Case Study Reader
   const modalOverlay = document.getElementById('case-study-modal');
   const modalContentBody = document.getElementById('modal-content-body');
   const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -138,6 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function openCaseStudy(studyId) {
     const data = window.caseStudiesData[studyId];
     if (!data || !modalContentBody) return;
+
+    const checkSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-blush);" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+    const sparkSvg = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="color: var(--accent-blush);" aria-hidden="true"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>`;
 
     modalContentBody.innerHTML = `
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -162,35 +173,35 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="font-size: 0.95rem; font-weight: 700; margin-top: 0.25rem;">${data.role}</div>
           </div>
           <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Tech & Design Tools</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Tech and Design Tools</div>
             <div style="font-size: 0.88rem; color: var(--accent-blush); margin-top: 0.25rem; font-family: var(--font-mono);">${data.techStack.join(' • ')}</div>
           </div>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
           <h3 style="font-size: 1.3rem; color: var(--accent-blush); display: flex; align-items: center; gap: 0.5rem;">
-            <span>✦</span> The Core Problem
+            ${sparkSvg} The Core Problem
           </h3>
           <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">${data.problem}</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 1rem;">
           <h3 style="font-size: 1.3rem; color: var(--accent-purple); display: flex; align-items: center; gap: 0.5rem;">
-            <span>✦</span> User Research & Discovery
+            ${sparkSvg} User Research and Discovery
           </h3>
           <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">${data.research}</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 1rem;">
           <h3 style="font-size: 1.3rem; color: var(--accent-blush); display: flex; align-items: center; gap: 0.5rem;">
-            <span>✦</span> The Design Solution
+            ${sparkSvg} The Design Solution
           </h3>
           <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">${data.solution}</p>
         </div>
 
         <div style="background: rgba(244, 114, 182, 0.08); border: 1px solid rgba(244, 114, 182, 0.3); border-radius: var(--radius-lg); padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem;">
           <div style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--accent-blush); font-weight: 700;">
-            THE DESIGN ENGINEER ADVANTAGE ⚡
+            THE DESIGN ENGINEER PERSPECTIVE
           </div>
           <h4 style="font-size: 1.15rem; font-weight: 700;">How Software Engineering Shaped This System</h4>
           <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65;">${data.engineeringHighlight}</p>
@@ -201,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding: 0;">
             ${data.deliverables.map(item => `
               <li style="display: flex; align-items: center; gap: 0.6rem; color: var(--text-secondary); font-size: 0.92rem;">
-                <span style="color: var(--accent-blush);">✓</span> ${item}
+                ${checkSvg} ${item}
               </li>
             `).join('')}
           </ul>
@@ -224,9 +235,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind click handlers to cards and "View Case Study" buttons
+  // Bind click handlers to cards
   projectCards.forEach(card => {
-    card.addEventListener('click', (e) => {
+    card.addEventListener('click', () => {
       const studyId = card.dataset.studyId;
       if (studyId) openCaseStudy(studyId);
     });
@@ -246,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 6. Interactive Contact Drawer ---
+  // 6. Interactive Contact Drawer
   const contactDrawerOverlay = document.getElementById('contact-drawer-overlay');
   const openDrawerBtns = document.querySelectorAll('.trigger-contact-drawer');
   const closeDrawerBtn = document.getElementById('drawer-close-btn');
@@ -315,17 +326,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const interest = interestInput ? interestInput.value : 'Full-time Role';
 
       if (!name || !email || !message) {
-        showToast('Please fill in all fields before sending.');
+        showToast('Please complete all fields before sending');
         return;
       }
 
-      // Visual sending state
       if (submitBtn) submitBtn.disabled = true;
-      if (btnText) btnText.textContent = 'Sending to Haziqa...';
+      if (btnText) btnText.textContent = 'Delivering Message...';
       if (statusMsg) {
         statusMsg.style.display = 'block';
         statusMsg.style.color = 'var(--accent-blush)';
-        statusMsg.textContent = 'Delivering your message to hazika007@gmail.com...';
+        statusMsg.textContent = 'Sending message directly...';
       }
 
       try {
@@ -350,10 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (response.ok || data.success === "true" || data.success === true) {
           window.playMicroSound(920);
-          showToast('Sent! Message delivered to hazika007@gmail.com ✨');
+          showToast('Message delivered successfully');
           contactForm.reset();
 
-          // Reset chips to default
           typeChips.forEach((c, idx) => {
             if (idx === 0) c.classList.add('selected');
             else c.classList.remove('selected');
@@ -362,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (statusMsg) {
             statusMsg.style.color = '#25d366';
-            statusMsg.textContent = '✓ Message delivered directly to hazika007@gmail.com!';
+            statusMsg.textContent = 'Message sent successfully';
           }
 
           setTimeout(() => {
@@ -376,17 +385,16 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(data.message || 'Submission error');
         }
       } catch (err) {
-        console.warn('Direct FormSubmit delivery issue, launching mailto fallback:', err);
+        console.warn('Direct delivery fallback triggered:', err);
         window.playMicroSound(440);
-        showToast('Direct delivery blocked. Opening email fallback...');
+        showToast('Opening your email application...');
 
-        // Fallback to mailto
         const mailtoUrl = `mailto:hazika007@gmail.com?subject=${encodeURIComponent(`Inquiry from ${name} (${interest})`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`)}`;
         window.open(mailtoUrl, '_blank');
 
         if (statusMsg) {
           statusMsg.style.color = '#f59e0b';
-          statusMsg.textContent = 'Opening your mail client to send directly to hazika007@gmail.com...';
+          statusMsg.textContent = 'Opening your email client to send message...';
         }
       } finally {
         if (submitBtn) submitBtn.disabled = false;
@@ -395,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 7. Copy Email Toast Notification ---
+  // 7. Toast Notification & Copy Email
   const copyEmailBtns = document.querySelectorAll('.trigger-copy-email');
   const toastNotification = document.getElementById('toast-notification');
   const emailAddress = "hazika007@gmail.com";
@@ -413,15 +421,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       navigator.clipboard.writeText(emailAddress).then(() => {
         window.playMicroSound(780);
-        showToast(`Email copied: ${emailAddress} ✨`);
+        showToast('Email address copied to clipboard');
       }).catch(() => {
-        // Fallback
-        showToast(`Contact: ${emailAddress}`);
+        showToast('Email address copied');
       });
     });
   });
 
-  // --- 8. Magnetic Button Hover Interaction ---
+  // 8. Magnetic Button Hover Interaction
   const magneticItems = document.querySelectorAll('.magnetic-target');
   magneticItems.forEach(el => {
     el.addEventListener('mousemove', (e) => {

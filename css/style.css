@@ -1935,3 +1935,116 @@ button {
   }
 }
 
+/* ==========================================================================
+   3D WEBGL SCULPTURE & HARDWARE-ACCELERATED PERSPECTIVE
+   ========================================================================== */
+.hero-media-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-media-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.3rem 0.4rem;
+  width: fit-content;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+}
+
+.hero-media-tab {
+  padding: 0.35rem 0.95rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.hero-media-tab.active {
+  background: var(--gradient-blush);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(244, 114, 182, 0.4);
+}
+
+.hero-3d-card {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: var(--gradient-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-3d-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  cursor: grab;
+}
+
+#hero-3d-canvas:active {
+  cursor: grabbing;
+}
+
+.hero-3d-badge {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: rgba(13, 8, 20, 0.78);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--accent-blush);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* 3D Hardware Accelerated Tilt & Perspective */
+.project-card,
+.bento-card,
+.portrait-frame,
+.interactive-sample-card,
+.hero-3d-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+}
+
+.card-3d-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
+
