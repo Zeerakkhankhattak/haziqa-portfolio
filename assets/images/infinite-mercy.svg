@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="mercy-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190e24"/>
+      <stop offset="50%" stop-color="#261238"/>
+      <stop offset="100%" stop-color="#12071d"/>
+    </linearGradient>
+    <linearGradient id="rose-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="mercy-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(45, 22, 66, 0.75)"/>
+      <stop offset="100%" stop-color="rgba(22, 10, 36, 0.85)"/>
+    </linearGradient>
+    <filter id="mercy-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#f472b6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#mercy-bg)"/>
+
+  <!-- Subtle Radial Aura -->
+  <circle cx="260" cy="220" r="170" fill="#f472b6" opacity="0.18" filter="blur(70px)"/>
+  <circle cx="580" cy="280" r="150" fill="#c084fc" opacity="0.16" filter="blur(70px)"/>
+
+  <!-- Left Main Card: Donor Impact Experience -->
+  <g transform="translate(80, 65)" filter="url(#mercy-shadow)">
+    <rect width="340" height="370" rx="24" fill="url(#mercy-card)" stroke="rgba(244,114,182,0.35)" stroke-width="1.5"/>
+    
+    <rect x="24" y="24" width="118" height="24" rx="12" fill="rgba(244,114,182,0.15)"/>
+    <text x="36" y="40" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">HUMANITARIAN UX</text>
+
+    <text x="24" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="22" font-weight="800">Infinite Mercy</text>
+    <text x="24" y="104" fill="#d1d5db" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13">Empathetic Charity & Donor Portal</text>
+
+    <!-- Donation Tier Visual -->
+    <rect x="24" y="128" width="292" height="120" rx="16" fill="rgba(15,8,25,0.6)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="44" y="158" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12">Direct Aid Goal Progress</text>
+    <text x="44" y="190" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="24" font-weight="800">$184,200 <tspan fill="#f472b6" font-size="14">/ $200k</tspan></text>
+    
+    <!-- Progress Bar -->
+    <rect x="44" y="206" width="252" height="10" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <rect x="44" y="206" width="228" height="10" rx="5" fill="url(#rose-grad)"/>
+
+    <!-- Quick Donation Pills -->
+    <g transform="translate(24, 268)">
+      <rect x="0" y="0" width="64" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="32" y="21" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="600">$25</text>
+
+      <rect x="74" y="0" width="64" height="34" rx="17" fill="rgba(244,114,182,0.2)" stroke="#f472b6"/>
+      <text x="106" y="21" text-anchor="middle" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="700">$50</text>
+
+      <rect x="148" y="0" width="64" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="180" y="21" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="600">$100</text>
+
+      <rect x="222" y="0" width="70" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="257" y="21" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="600">Custom</text>
+    </g>
+
+    <!-- Support CTA -->
+    <rect x="24" y="318" width="292" height="36" rx="18" fill="url(#rose-grad)"/>
+    <text x="170" y="341" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13" font-weight="700">Give with Dignity & Transparency</text>
+  </g>
+
+  <!-- Right Floating Trust & Usability Badge -->
+  <g transform="translate(460, 105)">
+    <rect width="260" height="145" rx="20" fill="url(#mercy-card)" stroke="rgba(244,114,182,0.3)" stroke-width="1.2"/>
+    <text x="24" y="36" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700" letter-spacing="1">USER RESEARCH INSIGHT</text>
+    <text x="24" y="68" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="26" font-weight="800">100% Clarity</text>
+    <text x="24" y="92" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12">Direct Fund Allocation Breakdown</text>
+    <text x="24" y="126" fill="#25d366" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="600">✓ Friction-free 2-step checkout</text>
+  </g>
+
+  <!-- Right Lower Feature: Transparency Ledger -->
+  <g transform="translate(460, 280)">
+    <rect width="260" height="140" rx="20" fill="url(#mercy-card)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="24" y="34" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="600">Verified Recipient Stories</text>
+    <text x="24" y="66" fill="#fbcfe8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="16" font-weight="700">3,400+ Families Reached</text>
+    
+    <rect x="24" y="86" width="94" height="26" rx="8" fill="rgba(244,114,182,0.15)"/>
+    <text x="36" y="103" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">Figma Verified</text>
+  </g>
+</svg>

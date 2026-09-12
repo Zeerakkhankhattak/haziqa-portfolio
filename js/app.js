@@ -287,24 +287,118 @@ document.addEventListener('DOMContentLoaded', () => {
     chip.addEventListener('click', () => {
       typeChips.forEach(c => c.classList.remove('selected'));
       chip.classList.add('selected');
+      const interestInput = document.getElementById('contact-interest-input');
+      if (interestInput) {
+        interestInput.value = chip.dataset.value || chip.textContent.trim();
+      }
       window.playMicroSound(560);
     });
   });
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      window.playMicroSound(920);
-      closeContactDrawer();
-      showToast('Thank you! Your message has been sent to Haziqa ✨');
-      contactForm.reset();
+
+      const submitBtn = document.getElementById('drawer-submit-btn') || contactForm.querySelector('button[type="submit"]');
+      const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+      const originalText = btnText ? btnText.textContent : 'Send Message';
+      const statusMsg = document.getElementById('drawer-form-status');
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const messageInput = document.getElementById('contact-message');
+      const interestInput = document.getElementById('contact-interest-input');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+      const interest = interestInput ? interestInput.value : 'Full-time Role';
+
+      if (!name || !email || !message) {
+        showToast('Please fill in all fields before sending.');
+        return;
+      }
+
+      // Visual sending state
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Sending to Haziqa...';
+      if (statusMsg) {
+        statusMsg.style.display = 'block';
+        statusMsg.style.color = 'var(--accent-blush)';
+        statusMsg.textContent = 'Delivering your message to hazika007@gmail.com...';
+      }
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/hazika007@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            interest: interest,
+            message: message,
+            _subject: `New Portfolio Message from ${name} (${interest})`,
+            _replyto: email,
+            _template: "table"
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok || data.success === "true" || data.success === true) {
+          window.playMicroSound(920);
+          showToast('Sent! Message delivered to hazika007@gmail.com ✨');
+          contactForm.reset();
+
+          // Reset chips to default
+          typeChips.forEach((c, idx) => {
+            if (idx === 0) c.classList.add('selected');
+            else c.classList.remove('selected');
+          });
+          if (interestInput) interestInput.value = 'Full-time Role';
+
+          if (statusMsg) {
+            statusMsg.style.color = '#25d366';
+            statusMsg.textContent = '✓ Message delivered directly to hazika007@gmail.com!';
+          }
+
+          setTimeout(() => {
+            closeContactDrawer();
+            if (statusMsg) {
+              statusMsg.style.display = 'none';
+              statusMsg.textContent = '';
+            }
+          }, 2000);
+        } else {
+          throw new Error(data.message || 'Submission error');
+        }
+      } catch (err) {
+        console.warn('Direct FormSubmit delivery issue, launching mailto fallback:', err);
+        window.playMicroSound(440);
+        showToast('Direct delivery blocked. Opening email fallback...');
+
+        // Fallback to mailto
+        const mailtoUrl = `mailto:hazika007@gmail.com?subject=${encodeURIComponent(`Inquiry from ${name} (${interest})`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`)}`;
+        window.open(mailtoUrl, '_blank');
+
+        if (statusMsg) {
+          statusMsg.style.color = '#f59e0b';
+          statusMsg.textContent = 'Opening your mail client to send directly to hazika007@gmail.com...';
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.textContent = originalText;
+      }
     });
   }
 
   // --- 7. Copy Email Toast Notification ---
   const copyEmailBtns = document.querySelectorAll('.trigger-copy-email');
   const toastNotification = document.getElementById('toast-notification');
-  const emailAddress = "haziqa.khattak.design@gmail.com";
+  const emailAddress = "hazika007@gmail.com";
 
   function showToast(message) {
     if (!toastNotification) return;

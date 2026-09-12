@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="eco-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f191a"/>
+      <stop offset="50%" stop-color="#152627"/>
+      <stop offset="100%" stop-color="#0a1213"/>
+    </linearGradient>
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <linearGradient id="eco-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(19, 44, 42, 0.75)"/>
+      <stop offset="100%" stop-color="rgba(10, 25, 24, 0.85)"/>
+    </linearGradient>
+    <filter id="eco-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#10b981" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#eco-bg)"/>
+
+  <!-- Ambient Emerald & Mint Glows -->
+  <circle cx="260" cy="200" r="170" fill="#10b981" opacity="0.16" filter="blur(70px)"/>
+  <circle cx="580" cy="290" r="150" fill="#06b6d4" opacity="0.14" filter="blur(70px)"/>
+
+  <!-- Left Card: Eco Trail Map Experience -->
+  <g transform="translate(80, 65)" filter="url(#eco-glow)">
+    <rect width="330" height="370" rx="24" fill="url(#eco-card)" stroke="rgba(52,211,153,0.35)" stroke-width="1.5"/>
+    
+    <rect x="24" y="24" width="130" height="24" rx="12" fill="rgba(16,185,129,0.18)"/>
+    <text x="36" y="40" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">SUSTAINABLE TRAVEL</text>
+
+    <text x="24" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="22" font-weight="800">EcoMapper App</text>
+    <text x="24" y="104" fill="#d1d5db" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="13">Low-Carbon Tourist Route Guide</text>
+
+    <!-- Topographic Trail Map Visual -->
+    <rect x="24" y="128" width="282" height="135" rx="16" fill="rgba(7,20,19,0.6)" stroke="rgba(255,255,255,0.08)"/>
+    
+    <!-- Topographic contour curves -->
+    <path d="M 30 180 Q 90 140 160 170 T 290 150" fill="none" stroke="rgba(52,211,153,0.25)" stroke-width="1.5"/>
+    <path d="M 30 210 Q 100 170 170 200 T 290 180" fill="none" stroke="rgba(52,211,153,0.2)" stroke-width="1.5"/>
+    
+    <!-- Active Green Eco Trail -->
+    <path d="M 50 230 Q 110 160 170 190 T 270 150" fill="none" stroke="url(#emerald-grad)" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="170" cy="190" r="10" fill="#10b981"/>
+    <circle cx="170" cy="190" r="4" fill="#ffffff"/>
+
+    <text x="44" y="156" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="700">Alpine Nature Sanctuary</text>
+    <text x="44" y="174" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11">Carbon Saved: -4.2 kg CO₂e</text>
+
+    <!-- Environmental Feature Pills -->
+    <g transform="translate(24, 280)">
+      <rect x="0" y="0" width="86" height="30" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(52,211,153,0.3)"/>
+      <text x="43" y="19" text-anchor="middle" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">Eco Routes</text>
+
+      <rect x="94" y="0" width="92" height="30" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(52,211,153,0.3)"/>
+      <text x="140" y="19" text-anchor="middle" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">Local Guides</text>
+
+      <rect x="194" y="0" width="88" height="30" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(52,211,153,0.3)"/>
+      <text x="238" y="19" text-anchor="middle" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">Footprint</text>
+    </g>
+
+    <rect x="24" y="324" width="282" height="32" rx="16" fill="url(#emerald-grad)"/>
+    <text x="165" y="345" text-anchor="middle" fill="#042f2e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="800">Plan Conscious Adventures</text>
+  </g>
+
+  <!-- Right Floating Metric Card -->
+  <g transform="translate(450, 110)">
+    <rect width="260" height="145" rx="20" fill="url(#eco-card)" stroke="rgba(52,211,153,0.3)" stroke-width="1.2"/>
+    <text x="24" y="36" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700" letter-spacing="1">TOURISM SUSTAINABILITY</text>
+    <text x="24" y="68" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="28" font-weight="800">100%</text>
+    <text x="24" y="92" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12">Interactive Map & Trail Navigation</text>
+    <text x="24" y="126" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="600">✓ Figma Mobile Prototype</text>
+  </g>
+
+  <!-- Right Lower Feature: Live Delivery -->
+  <g transform="translate(450, 285)">
+    <rect width="260" height="135" rx="20" fill="url(#eco-card)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="24" y="34" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="12" font-weight="600">Eco-Travel Research</text>
+    <text x="24" y="66" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="16" font-weight="700">Conscious Traveler Personas</text>
+    
+    <rect x="24" y="86" width="90" height="26" rx="8" fill="rgba(16,185,129,0.15)"/>
+    <text x="36" y="103" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto" font-size="11" font-weight="700">Figma File</text>
+  </g>
+</svg>
